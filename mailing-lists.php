@@ -42,7 +42,7 @@ $SIDEBAR_DATA = '
 site_header("Mailing Lists", array("current" => "help"));
 
 // Some mailing list is selected for [un]subscription
-if (isset($_POST['maillist'])) {
+if (isset($_POST['action'])) {
 
     // No error found yet
     $error = "";
@@ -51,6 +51,12 @@ if (isset($_POST['maillist'])) {
     if (empty($_POST['email']) || $_POST['email'] == 'user@example.com' ||
         $_POST['email'] == 'fake@from.net' || !is_emailable_address($_POST['email'])) {
         $error = "You forgot to specify an email address to be added to the list, or specified an invalid address." .
+                 "<br>Please go back and try again.";
+    }
+
+    // Check if any mailing list was selected
+    else if (empty($_POST['maillist'])) {
+        $error = "You need to select at least one mailing list to subscribe to." .
                  "<br>Please go back and try again.";
     }
 
@@ -64,9 +70,9 @@ if (isset($_POST['maillist'])) {
         }
         $remote_addr = i2c_realip();
 
-        // Get in contact with master server to [un]subscribe the user
+        // Get in contact with main server to [un]subscribe the user
         $result = posttohost(
-            "http://master.php.net/entry/subscribe.php",
+            "http://main.php.net/entry/subscribe.php",
             array(
                 "request"  => $request,
                 "email"    => $_POST['email'],
@@ -172,7 +178,7 @@ if (isset($_POST['maillist'])) {
 </ul>
 <p>
  And make sure you have read our
- <a href="//git.php.net/?p=php-src.git;a=blob_plain;f=docs/mailinglist-rules.md;hb=HEAD">Mailinglist Rules</a>.
+ <a href="https://github.com/php/php-src/blob/master/docs/mailinglist-rules.md">Mailinglist Rules</a>.
 </p>
 <?php
 

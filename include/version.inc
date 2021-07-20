@@ -20,37 +20,37 @@ $RELEASES = (function() {
 
     /* PHP 8.0 Release */
     $data['8.0'] = [
-        'version' => '8.0.0',
-        'date'    => '26 Nov 2020',
+        'version' => '8.0.8',
+        'date'    => '01 Jul 2021',
         'tags'    => [], // Set to ['security'] for security releases.
         'sha256' => [
-            'tar.gz'  => '3ed7b48d64357d3e8fa9e828dbe7416228f84105b8290c2f9779cd66be31ea71',
-            'tar.bz2' => '5e832dc37eabf444410b4ea6fb3d66b72e44e7407a3b49caa5746edcf71b9d09',
-            'tar.xz'  => 'b5278b3eef584f0c075d15666da4e952fa3859ee509d6b0cc2ed13df13f65ebb',
+            'tar.gz'  => '084a1e8020e86fb99b663d195fd9ac98a9f37dfcb9ecb5c159054cdb8f388945',
+            'tar.bz2' => '14bd77d71a98943e14b324da83e31b572781df583cda9650a184fae3214cd16f',
+            'tar.xz'  => 'dc1668d324232dec1d05175ec752dade92d29bb3004275118bc3f7fc7cbfbb1c',
         ]
     ];
 
     /* PHP 7.4 Release */
     $data['7.4'] = [
-        'version' => '7.4.13',
-        'date'    => '26 Nov 2020',
-        'tags'      => [],
+        'version' => '7.4.21',
+        'date'    => '01 Jul 2021',
+        'tags'    => [], // Set to ['security'] for security releases
         'sha256'  => [
-            'tar.gz'  => '0865cff41e7210de2537bcd5750377cfe09a9312b9b44c1a166cf372d5204b8f',
-            'tar.bz2' => '15a339857e11c92eb47fddcd0dfe8aaa951a9be7c57ab7230ccd497465a31fda',
-            'tar.xz'  => 'aead303e3abac23106529560547baebbedba0bb2943b91d5aa08fff1f41680f4',
+            'tar.gz'  => '4b9623accbe4b8923a801212f371f784069535009185e7bf7e4dec66bbea61db',
+            'tar.bz2' => '36ec6102e757e2c2b7742057a700bbff77c76fa0ccbe9c860398c3d24e32822a',
+            'tar.xz'  => 'cf43384a7806241bc2ff22022619baa4abb9710f12ec1656d0173de992e32a90',
         ]
     ];
 
     /* PHP 7.3 Release */
     $data['7.3'] = [
-        'version' => '7.3.25',
-        'date'    => '26 Nov 2020',
-        'tags'      => [],
+        'version' => '7.3.29',
+        'date'    => '01 Jul 2021',
+        'tags'      => ['security'],
         'sha256'  => [
-            'tar.gz'  => '097c7a2a2f9189b33799d79ee5a8aac68a4d72696c1cd69c66ef5d0941ce28ad',
-            'tar.bz2' => '69315a4daa91e3b07c90eef86fe205c8812c4ac5ce119c9953ecc9f42e7702fb',
-            'tar.xz'  => 'c71c00ad03079efb78d1a6b8623ca4f725be697dbd9a46debacbcc9a2475f329',
+            'tar.gz'  => 'ba4de3955b0cbd33baee55a83568acc4347605e210a54b5654e4c1e09b544659',
+            'tar.bz2' => 'a83a2878140bd86935f0046bbfe92672c8ab688fbe4ccf9704add6b9605ee4d0',
+            'tar.xz'  => '7db2834511f3d86272dca3daee3f395a5a4afce359b8342aa6edad80e12eb4d0',
         ]
     ];
 

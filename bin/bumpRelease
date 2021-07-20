@@ -24,13 +24,13 @@ if ($info === null) {
 }
 
 $info["museum"] = false;
-if (is_bool($info["announcement"]) && $info["announcement"]) {
+if ($info["announcement"] === true) {
 	$info["announcement"] = array("English" => "/releases/" . str_replace(".", "_", $version) . ".php");
 }
 
 $OLDRELEASES[$major] = array_merge(
 	array($version => $info),
-	$OLDRELEASES[$major]
+	$OLDRELEASES[$major] ?? []
 );
 
 file_put_contents(__DIR__ . "/../include/releases.inc", [

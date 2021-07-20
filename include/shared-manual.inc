@@ -277,21 +277,21 @@ VOTEDIV;
         $admin = "\n  <span class=\"admin\">\n   " .
 
         make_popup_link(
-            'https://master.php.net/manage/user-notes.php?action=edit+' . $id,
+            'https://main.php.net/manage/user-notes.php?action=edit+' . $id,
             '<img src="/images/notes-edit@2x.png" height="12" width="12" alt="edit note">',
             'admin',
             'scrollbars=yes,width=650,height=400'
         ) . "\n   " .
 
         make_popup_link(
-            'https://master.php.net/manage/user-notes.php?action=reject+' . $id,
+            'https://main.php.net/manage/user-notes.php?action=reject+' . $id,
             '<img src="/images/notes-reject@2x.png" height="12" width="12" alt="reject note">',
             'admin',
             'scrollbars=no,width=300,height=200'
         ) . "\n   " .
 
         make_popup_link(
-            'https://master.php.net/manage/user-notes.php?action=delete+' . $id,
+            'https://main.php.net/manage/user-notes.php?action=delete+' . $id,
             '<img src="/images/notes-delete@2x.png" height="12" width="12" alt="delete note">',
             'admin',
             'scrollbars=no,width=300,height=200'
@@ -441,14 +441,15 @@ function manual_setup($setup) {
 
     $id = substr($setup['this'][0], 0, -4);
     $language_chooser = 'manual_language_chooser';
+    $repo = strtolower($config['lang']); // pt_BR etc.
     echo <<<PAGE_TOOLS
   <div class="page-tools">
     <div class="change-language">
       {$language_chooser($config['lang'], $config['thispage'])}
     </div>
     <div class="edit-bug">
-      <a href="https://edit.php.net/?project=PHP&amp;perm={$config['lang']}/{$config['thispage']}">Edit</a>
-      <a href="https://bugs.php.net/report.php?bug_type=Documentation+problem&amp;manpage=$id">Report a Bug</a>
+      <a href="https://github.com/php/doc-{$repo}">Submit a Pull Request</a>
+      <a href="https://github.com/php/doc-en/issues/new?body=From%20manual%20page:%20https:%2F%2Fphp.net%2F$id%0A%0A---">Report a Bug</a>
     </div>
   </div>
 PAGE_TOOLS;

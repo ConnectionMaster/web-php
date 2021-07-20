@@ -115,8 +115,8 @@ if ($process) {
     }
 
     if (isset($_POST['action']) && $_POST['action'] === 'Submit' && empty($errors)) {
-        // Submit to master.php.net
-        $result = posttohost("http://master.php.net/entry/event.php", $_POST);
+        // Submit to main.php.net
+        $result = posttohost("http://main.php.net/entry/event.php", $_POST);
         if ($result) {
             $errors[] = "There was an error processing your submission: $result";
         }
@@ -152,10 +152,10 @@ if (count($errors)) { display_errors($errors); }
 
 // Generate days and months arrays for form
 for ($i = 1; $i <= 7; $i++) {
-    $days[$i] = strftime('%A', mktime(12, 0, 0, 4, $i));
+    $days[$i] = date('l', mktime(12, 0, 0, 4, $i));
 }
 for ($i = 1; $i <= 12; $i++) {
-    $months[$i] = strftime('%B', mktime(12, 0, 0, $i, 1));
+    $months[$i] = date('F', mktime(12, 0, 0, $i, 1));
 }
 
 // Possibilities to recur
